@@ -14906,6 +14906,36 @@ input:checked + .slider:before {
 }
 
 
+.real-estate-agent {
+  position: absolute;
+  top: 10px;
+}
+
+.real-estate-agent.left-agent {
+  left: 10px;
+}
+
+.real-estate-agent.right-agent {
+  right: 10px;
+}
+
+.real-estate-agent .agent-img {
+  max-width: 40px;
+  margin: 0 12px;
+}
+
+.real-estate-agent .agent-img img {
+  border-radius: 0%;
+}
+
+.ltn__product-item-5 .real-estate-agent .agent-img {
+  max-width: 50px;
+}
+
+.ltn__product-item-5 .real-estate-agent .agent-img img {
+  border: 0px solid;
+  border-color: var(--border-color-1);
+}
 
 
 /* ----------------------------------------------------
