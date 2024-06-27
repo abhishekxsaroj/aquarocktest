@@ -11052,7 +11052,7 @@ blockquote {
   .ltn__contact-address-item-3 .ltn__contact-address-icon {
     margin-bottom: 35px; }
     .ltn__contact-address-item-3 .ltn__contact-address-icon img {
-      max-width: 80px; }
+      max-width: 50px; }
   .ltn__contact-address-item-3:hover i {
     background-color: transparent;
     color: var(--ltn__secondary-color); }
@@ -14937,6 +14937,22 @@ input:checked + .slider:before {
   border-color: var(--border-color-1);
 }
 
+
+
+.ltn__contact-address-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure each item takes up full height of the container */
+}
+
+.ltn__contact-address-icon {
+  margin-bottom: 15px; /* Adjust as needed */
+}
+
+.ltn__contact-address-item h3,
+.ltn__contact-address-item p {
+  margin-bottom: 10px; /* Adjust as needed */
+}
 
 /* ----------------------------------------------------
     END
