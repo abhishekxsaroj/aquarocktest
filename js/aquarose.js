@@ -19,6 +19,18 @@ const contactFormDB = firebase.database().ref("aquarose");
 // Function to handle form submission
 document.getElementById("enquireForm").addEventListener("submit", submitForm);
 
+// Function to open modal
+function openModal(event, purpose) {
+    event.preventDefault();
+    document.getElementById('formPurpose').value = purpose;
+    document.getElementById('enquireModal').style.display = 'block';
+}
+
+// Function to close modal
+function closeModal() {
+    document.getElementById('enquireModal').style.display = 'none';
+}
+
 function submitForm(event) {
     event.preventDefault();
 
@@ -26,9 +38,10 @@ function submitForm(event) {
     const name = getElementById("name").value;
     const phone = getElementById("phone").value;
     const email = getElementById("email").value;
+    const purpose = getElementById('formPurpose').value;
 
     // Save data to Firebase
-    saveMessages(name, phone, email);
+    saveMessages(name, phone, email, purpose);
 
     // Show success message (optional)
     alert("Form submitted successfully!");
@@ -38,35 +51,32 @@ function submitForm(event) {
 
     // Close the modal
     closeModal();
+
+    // Directly open PDF download link in a new tab if purpose is 'download'
+    if (purpose === 'download') {
+        // Replace with your actual PDF URL
+        var fileUrl = '/public/media/AQUAROCK.pdf';
+        window.open(fileUrl, '_blank');
+    }
 }
 
-// Function to save messages to Firebase
-function saveMessages(name, phone, email) {
+// Function to save messages to Firebase (keep this as is)
+function saveMessages(name, phone, email, purpose) {
     const newContactForm = contactFormDB.push();
     newContactForm.set({
         name: name,
         phone: phone,
-        email: email
+        email: email,
+        purpose: purpose
     });
 }
 
-// Utility function to get element by ID
+// Utility function to get element by ID (keep this as is)
 function getElementById(id) {
     return document.getElementById(id);
 }
 
-// Function to open the modal
-function openModal(event) {
-    event.preventDefault();  // Prevent the default anchor tag behavior
-    document.getElementById("enquireModal").style.display = "block";
-}
-
-// Function to close the modal
-function closeModal() {
-    document.getElementById("enquireModal").style.display = "none";
-}
-
-// Close the modal when the user clicks outside of it
+// Function to close the modal when clicking outside of it (keep this as is)
 window.onclick = function(event) {
     if (event.target == document.getElementById("enquireModal")) {
         closeModal();

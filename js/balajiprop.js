@@ -17,7 +17,7 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 // Function to save form data to Firebase
-function saveFormData(name, phone, email, databaseRef) {
+function saveFormData(name, phone, email, databaseRef, propertyName) {
     // Generate a new key for each form submission
     const newContactForm = databaseRef.push();
 
@@ -25,7 +25,8 @@ function saveFormData(name, phone, email, databaseRef) {
     newContactForm.set({
         name: name,
         phone: phone,
-        email: email
+        email: email,
+        propertyName: propertyName
     });
 }
 
@@ -33,7 +34,7 @@ function saveFormData(name, phone, email, databaseRef) {
 document.addEventListener("DOMContentLoaded", function() {
     // Enquire Modal 1 (AquaRose)
     const form1 = document.getElementById("enquireForm");
-    const contactFormDB1 = database.ref("aquaroseprop");
+    const contactFormDB1 = database.ref("common");
 
     form1.addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent form submission
@@ -42,9 +43,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const name = document.getElementById("name").value;
         const phone = document.getElementById("phone").value;
         const email = document.getElementById("email").value;
+        const propertyName = "aquarose";
 
         // Save form data to Firebase
-        saveFormData(name, phone, email, contactFormDB1);
+        saveFormData(name, phone, email, contactFormDB1, propertyName);
 
         // Optionally show a success message or reset the form
         form1.reset();
@@ -53,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Enquire Modal 2 (Balaji Residency)
     const form2 = document.getElementById("enquireForm2");
-    const contactFormDB2 = database.ref("balajiprop");
+    const contactFormDB2 = database.ref("common");
 
     form2.addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent form submission
@@ -62,9 +64,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const name = document.getElementById("name2").value;
         const phone = document.getElementById("phone2").value;
         const email = document.getElementById("email2").value;
+        const propertyName = "balaji";
 
         // Save form data to Firebase
-        saveFormData(name, phone, email, contactFormDB2);
+        saveFormData(name, phone, email, contactFormDB2, propertyName);
 
         // Optionally show a success message or reset the form
         form2.reset();
@@ -73,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
      // Enquire Modal 3 (Misty Hills)
      const form3 = document.getElementById("enquireForm3");
-     const contactFormDB3 = database.ref("mistyhillsprop");
+     const contactFormDB3 = database.ref("common");
  
      form3.addEventListener("submit", function(event) {
          event.preventDefault(); // Prevent form submission
@@ -82,9 +85,10 @@ document.addEventListener("DOMContentLoaded", function() {
          const name = document.getElementById("name3").value;
          const phone = document.getElementById("phone3").value;
          const email = document.getElementById("email3").value;
+         const propertyName = "misty";
  
          // Save form data to Firebase
-         saveFormData(name, phone, email, contactFormDB3);
+         saveFormData(name, phone, email, contactFormDB3, propertyName);
  
          // Optionally show a success message or reset the form
          form3.reset();
@@ -93,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
      // Enquire Modal 4 (Wai Greens)
      const form4 = document.getElementById("enquireForm4");
-     const contactFormDB4 = database.ref("waigreens");
+     const contactFormDB4 = database.ref("common");
  
      form4.addEventListener("submit", function(event) {
          event.preventDefault(); // Prevent form submission
@@ -102,9 +106,10 @@ document.addEventListener("DOMContentLoaded", function() {
          const name = document.getElementById("name4").value;
          const phone = document.getElementById("phone4").value;
          const email = document.getElementById("email4").value;
+         const propertyName = "wai";
  
          // Save form data to Firebase
-         saveFormData(name, phone, email, contactFormDB4);
+         saveFormData(name, phone, email, contactFormDB4, propertyName);
  
          // Optionally show a success message or reset the form
          form4.reset();
@@ -113,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Enquire Modal 5 (Jodhawat Construction)
       const form5 = document.getElementById("enquireForm5");
-      const contactFormDB5 = database.ref("jodhawat");
+      const contactFormDB5 = database.ref("common");
   
       form5.addEventListener("submit", function(event) {
           event.preventDefault(); // Prevent form submission
@@ -122,9 +127,10 @@ document.addEventListener("DOMContentLoaded", function() {
           const name = document.getElementById("name5").value;
           const phone = document.getElementById("phone5").value;
           const email = document.getElementById("email5").value;
+          const propertyName = "jodhawat";
   
           // Save form data to Firebase
-          saveFormData(name, phone, email, contactFormDB5);
+          saveFormData(name, phone, email, contactFormDB5, propertyName);
   
           // Optionally show a success message or reset the form
           form5.reset();

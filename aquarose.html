@@ -578,8 +578,8 @@
             <br><br>
             <!-- Button Section Start -->
             <div class="button-section text-center">
-                <a href="#" class="theme-btn-1 btn btn-effect-1" onclick="openModal(event)">Enquire Now</a>
-                <a href="#" class="btn btn-transparent btn-effect-3">Download Brochure</a>
+                <a href="#" class="theme-btn-1 btn btn-effect-1" onclick="openModal(event, 'enquire')">Enquire Now</a>
+                <a href="#" class="btn btn-transparent btn-effect-3" onclick="openModal(event, 'download')">Download Brochure</a>
             </div>
             <!-- Button Section End -->
         </div>
@@ -595,19 +595,20 @@
 </script>
 
 
-    <!-- Enquire Now Modal -->
+<!-- Enquire Now Modal -->
 <div id="enquireModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <h2>Enquire Now</h2>
         <form id="enquireForm">
+            <input type="hidden" id="formPurpose" name="purpose">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" placeholder="Enter your name" required>
             </div>
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="Enter your phone number"  required pattern="[0-9]+" title="Please enter only numbers">
+                <input type="tel" id="phone" placeholder="Enter your phone number" required pattern="[0-9]+" title="Please enter only numbers">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -617,7 +618,6 @@
         </form>
     </div>
 </div>
-
 
 <!--<script>
     // Function to open the modal
