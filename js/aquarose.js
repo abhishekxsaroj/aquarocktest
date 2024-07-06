@@ -55,7 +55,7 @@ function submitForm(event) {
     // Directly open PDF download link in a new tab if purpose is 'download'
     if (purpose === 'download') {
         // Replace with your actual PDF URL
-        var fileUrl = '/public/media/AQUAROCK.pdf';
+        var fileUrl = '/media/AQUAROCK.pdf';  // Ensure this path is correct
         window.open(fileUrl, '_blank');
     }
 }
