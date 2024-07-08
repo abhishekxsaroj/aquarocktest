@@ -355,10 +355,36 @@
         <!-- Button Section Start -->
         <div class="button-section text-center">
             <a href="aquarose.html" class="theme-btn-1 btn btn-effect-1">Know More</a>
-            <a href="#" class="btn btn-transparent btn-effect-3">Download Brochure</a>
+            <a href="#" class="btn btn-transparent btn-effect-3" onclick="openModal(event, 'home download')">Download Brochure</a>
+
         </div>
         <!-- Button Section End -->
     </div>
+
+
+    <!-- Enquire Now Modal -->
+<div id="enquireModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Enquire Now</h2>
+        <form id="enquireForm">
+            <input type="hidden" id="formPurpose" name="purpose">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required pattern="[0-9]+" title="Please enter only numbers">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="theme-btn-1 btn btn-effect-1">Submit</button>
+        </form>
+    </div>
+</div>
     <!-- ABOUT US AREA END -->
 
     <!-- FEATURE AREA START ( Feature - 6) -->
@@ -1428,6 +1454,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="./js/newsletter.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="./js/aquarose.js"></script>
 
   
 </body>
